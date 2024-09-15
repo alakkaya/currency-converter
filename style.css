@@ -3,6 +3,7 @@ body{
 
 }
 
+
 #main{
     display: flex;
     flex-direction: column;
@@ -14,15 +15,22 @@ body{
     border-radius: 10px;
     background-color:white ;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Gölge ekle */
-
+    opacity: 0; /* Başlangıçta görünmez */
+    transform: translateY(20px); /* Biraz aşağıdan başla */
+    animation: fadeIn 1s ease-out forwards; /* Animasyonu uygula */
 }
-
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Görünür ol */
+        transform: translateY(0); /* Orijinal konuma gel */
+    }
+}
 #container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; /* Yatay ve dikey olarak ortalamak için */
-    min-height: 100vh; /* Sayfanın tamamını kaplaması için */
+    min-height: 100vh; 
 
 }
 
@@ -60,9 +68,9 @@ input{
     margin: 0px 10px;
      width: 200px;
     height: 25px;
-    border: 1px solid #ccc; /* Kenarlık ekle */
+    border: 1px solid #ccc; 
     border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Gölge ekle */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 }
 select{
@@ -73,12 +81,36 @@ select{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 
 }
+input:focus, select:focus {
+    border-color: #3498db; 
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); 
+    outline: none; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+input:hover, select:hover {
+    transform: translateY(-5px); 
+    transition: transform 0.3s ease; 
+}
+
+#convert-button:hover {
+    transform: translateY(-5px); 
+    transition: transform 0.3s ease; 
+}
+
+#convert-button:active {
+    transform: scale(0.95); 
+}
 
 .fa-arrow-right {
     color: rgb(21, 159, 186);
     padding-left: 4px;
     padding-right: 4px;
     font-size: 24px; 
+    transition: color 0.3s ease; 
+}
+.fa-arrow-right:hover {
+    color: #3498db; 
 }
 
 #convert-button{
@@ -93,7 +125,11 @@ select{
 }
 
 #convert-button:hover {
-    background-color: #2980b9; /* Hover rengi */
+    background-color: #2980b9; 
+}
+
+#convert-button:active {
+    transform: scale(0.95); 
 }
 
 span{
