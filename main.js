@@ -2,13 +2,14 @@ const amountInput = document.querySelector("#amount");
 const firstOption = document.querySelector("#firstCurrencyOption");
 const secondOption = document.querySelector("#secondCurrencyOption");
 const resultInput = document.querySelector("#result");
+const convertButton = document.querySelector("#convert-button");
 
 const currency = new Currency();
 
 runEventListener();
 
 function runEventListener() {
-  amountInput.addEventListener("input", exchange);
+  convertButton.addEventListener("click", exchange);
 }
 
 function exchange() {

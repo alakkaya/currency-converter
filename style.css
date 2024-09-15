@@ -1,19 +1,29 @@
+body{
+    background: linear-gradient(to right, #007991, #78ffd6);
+
+}
+
 #main{
     display: flex;
     flex-direction: column;
     border: 1px solid lightgrey;
-    width:600px;
-    height: auto;
+    width: 80%; 
+    max-width: 800px; 
     align-items: center;
-    padding: 10px;
-    border-radius: 5px;
-    background-color:antiquewhite ;
+    padding: 30px;
+    border-radius: 10px;
+    background-color:white ;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Gölge ekle */
+
 }
 
-#container{
+#container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Yatay ve dikey olarak ortalamak için */
+    min-height: 100vh; /* Sayfanın tamamını kaplaması için */
+
 }
 
 .header-wrapper{
@@ -23,22 +33,73 @@
 }
 
 .header-wrapper >h4{
-    margin: 15px;
+    margin: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 24px;
+    color: #555;
+}
+
+.amount-div,
+.result-div {
+    margin: 20px 0; /* Üst-alt boşluk */
+    width: 100%; /* Genişliği tam yap */
+    display: flex;
+    justify-content: center; /* İçerik ortala */
+}
+
+.selection-div{
+    display: flex;
+    align-items: center; /* Dikeyde ortala */
+    justify-content: center; /* Yatayda ortala */
+    gap: 10px; /* Öğeler arasındaki boşluk */
+    text-align: center;
 }
 
 input{
     padding: 5px;
     margin: 0px 10px;
-    width:120px;
+     width: 200px;
+    height: 25px;
+    border: 1px solid #ccc; /* Kenarlık ekle */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Gölge ekle */
+
 }
 select{
     padding: 5px;
+    border-radius: 5px;
+    height: 40px;
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+
+}
+
+.fa-arrow-right {
+    color: rgb(21, 159, 186);
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 24px; 
+}
+
+#convert-button{
+    background-color: #3498db; 
+    color: white;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease
+}
+
+#convert-button:hover {
+    background-color: #2980b9; /* Hover rengi */
 }
 
 span{
     display: block;
     text-align: center;
     margin-top: 20px;
+    font-size: 14px;
+    color: #555;
 }
